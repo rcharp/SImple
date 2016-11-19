@@ -24,9 +24,9 @@ MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 MAIL_DEFAULT_SENDER = os.environ.get('MAIL_USERNAME')
 MAIL_SERVER = 'mail.getsimplemetrics.com'
-MAIL_PORT = 143
+MAIL_PORT = 587
 MAIL_USE_SSL = 0  # Use '1' for True and '0' for False
-MAIL_USE_TLS = 0  # Use '1' for True and '0' for False
+MAIL_USE_TLS = 1  # Use '1' for True and '0' for False
 
 ADMINS = []
 admin1 = os.getenv('ADMIN1', '"Admin One" <admin1@gmail.com>')
