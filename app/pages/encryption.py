@@ -1,7 +1,6 @@
 from Crypto.Cipher import AES
 import base64
 import os
-from simplecrypt import encrypt, decrypt
 
 # the block size for the cipher object; must be 16, 24, or 32 for AES
 BLOCK_SIZE = 32
@@ -26,11 +25,10 @@ DecodeAES = lambda c, e: c.decrypt(base64.b64decode(e)).rstrip(PADDING)
 
 def encode(plaintext):
     # encode a string
-    #encoded = EncodeAES(cipher, plaintext)
-    #plaintext = bytes(plaintext)
-    return encrypt(secret, bytes(plaintext))
+    encoded = EncodeAES(cipher, plaintext)
+    return encoded
 
 def decode(encoded):
     # decode the encoded string
-    #decoded = DecodeAES(cipher, encoded)
-    return decrypt(secret, bytes(encoded))
+    decoded = DecodeAES(cipher, encoded)
+    return decoded

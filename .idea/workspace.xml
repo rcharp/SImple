@@ -24,11 +24,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75" vertical-offset="255" max-vertical-offset="15285">
+              <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="encryption.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="585">
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7777777" vertical-offset="2976" max-vertical-offset="6150">
-              <caret line="207" column="84" selection-start-line="207" selection-start-column="84" selection-end-line="207" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.5046083" vertical-offset="2391" max-vertical-offset="6150">
+              <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
               <folding>
                 <element signature="e#100#109#0" expanded="true" />
               </folding>
@@ -46,14 +72,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="date.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/date.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39045554" vertical-offset="630" max-vertical-offset="2250">
+            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2250">
               <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emails.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/emails.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1005">
+              <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/static/vendors/parsleyjs/bower_components/bootstrap/dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/static/vendors/bootstrap/dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/pages/allevents.py" />
         <option value="$PROJECT_DIR$/app/static/less/custom.css" />
@@ -107,7 +142,6 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/application.py" />
         <option value="$PROJECT_DIR$/app/pages/views.py" />
-        <option value="$PROJECT_DIR$/app/pages/encryption.py" />
         <option value="$PROJECT_DIR$/app/templates/base_templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/base_templates/footer_base.html" />
         <option value="$PROJECT_DIR$/app/templates/pages/index.html" />
@@ -117,6 +151,8 @@
         <option value="$PROJECT_DIR$/app/pages/emails.py" />
         <option value="$PROJECT_DIR$/app/startup/settings.py" />
         <option value="$PROJECT_DIR$/app/pages/date.py" />
+        <option value="$PROJECT_DIR$/app/templates/pages/welcome_email.html" />
+        <option value="$PROJECT_DIR$/app/pages/encryption.py" />
       </list>
     </option>
   </component>
@@ -178,6 +214,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/pages/welcome_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="2715" max-vertical-offset="3765">
-          <caret line="200" column="78" selection-start-line="200" selection-start-column="68" selection-end-line="200" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/oldfiles/encrypt_string.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="461">
@@ -822,16 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/base_templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.9583335" vertical-offset="1093" max-vertical-offset="1530">
@@ -872,34 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/emails.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1005">
-          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3318078" vertical-offset="8210" max-vertical-offset="15285">
-          <caret line="543" column="37" selection-start-line="543" selection-start-column="37" selection-end-line="543" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7777777" vertical-offset="2976" max-vertical-offset="6150">
-          <caret line="207" column="84" selection-start-line="207" selection-start-column="84" selection-end-line="207" selection-end-column="84" />
-          <folding>
-            <element signature="e#100#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/startup/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="975">
@@ -910,10 +918,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/date.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39045554" vertical-offset="630" max-vertical-offset="2250">
+        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2250">
           <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/welcome_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10297483" vertical-offset="2970" max-vertical-offset="3765">
+          <caret line="200" column="48" selection-start-line="200" selection-start-column="48" selection-end-line="200" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/emails.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1005">
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/simple/app/pages/encryption.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="9" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75" vertical-offset="255" max-vertical-offset="15285">
+          <caret line="39" column="74" selection-start-line="39" selection-start-column="74" selection-end-line="39" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="585">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5046083" vertical-offset="2391" max-vertical-offset="6150">
+          <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
+          <folding>
+            <element signature="e#100#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
