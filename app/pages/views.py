@@ -37,6 +37,10 @@ stripe_keys = {
 
 
 ## home pages and redirects ##################
+@app.route('/', methods = ['GET'])
+def home():
+    return redirect(url_for('index'))
+
 @app.route('/index', methods = ['GET'])
 ##@login_required
 def index():
