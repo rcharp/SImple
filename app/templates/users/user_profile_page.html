@@ -1,0 +1,77 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block main %}
+<!DOCTYPE html>
+<html class="bg" style="background-color:#FFFFFF;">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Sign Up - SimpleMetrics</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="/static/css/compiled/theme.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/vendor/brankic.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/vendor/isotope.css">
+
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/static/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/static/js/theme.js"></script>
+	<script src="/static/js/vendor/jquery.isotope.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body id="portfolio" style="background-color:#FFFFFF; margin-top:-8px;">
+	<div id="showcase" style="margin-bottom:320px;height:100%">
+		<div class="container" style="margin-bottom:9.5%; align:center">
+          <div class="project" style="float:center; width:80%; margin:auto">
+              <div class="col-md-6" style="float:right; vertical-align:top">
+                    <h2>Plan Details</h2>
+                    {% if (current_user.user_auth.plan == 'hobby') %}
+                        {% set price = 39 %}
+                        <p>You are currently signed up for the <strong><font style="text-transform: capitalize;">{{current_user
+                        .user_auth.plan}}</font></strong> plan for <strong>${{ price }}/month.</strong></p>
+                    {% elif (current_user.user_auth.plan == 'startup') %}
+                        {% set price = 79 %}
+                        <p>You are currently signed up for the <strong><font style="text-transform: capitalize;">{{current_user
+                        .user_auth.plan}}</font></strong> plan for <strong>${{ price }}/month.</strong></p>
+                    {% elif (current_user.user_auth.plan == 'professional') %}
+                        {% set price = 149 %}
+                        <p>You are currently signed up for the <strong><font style="text-transform: capitalize;">{{current_user
+                        .user_auth.plan}}</font></strong> plan for <strong>${{ price }}/month.</strong></p>
+                    {% else %}
+                        <p>You are not currently signed up for a plan.</p>
+                    {% endif %}
+                    <p><a href="{{ url_for('delete') }}">Delete My Account</a></p>
+              </div>
+            <h2 width="80%" style="float:left">User Profile</h2></br></br></br></br>
+            <p width="80%"
+               style="float:left"><a href="{{ url_for('user.change_username') }}">Change username</a></p></br></br>
+            <p width="80%"
+               style="float:left"><a href="{{ url_for('user.change_password') }}">Change password</a></p></br></br>
+
+            {% from "base_templates/form_macros.html" import render_field, render_submit_field %}
+			  <!--
+            <form action="" method="POST" class="form" role="form">
+              <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-4">
+                  {{ form.hidden_tag() }}
+
+                  {{ render_field(form.first_name, tabindex=240) }}
+
+                  {{ render_field(form.last_name, tabindex=250) }}
+
+                  {{ render_submit_field(form.submit, tabindex=280) }}
+                </div>
+                  </div>
+            </form>-->
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

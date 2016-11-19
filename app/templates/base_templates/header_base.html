@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SimpleMetrics</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="/static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- jVectorMap -->
+    <link href="/static/css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="/static/css/custom.min.css" rel="stylesheet">
+    <link href="/static/app/app.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav class="" role="navigation">
+              <div id="header-div" class="clearfix with-margins">
+                <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">&nbsp;&nbsp;SimpleMetrics</span></a></div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <div class="pull-right">
+                  {% if current_user.is_authenticated() %}
+                <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name or current_user.user_auth.username }}</a>
+                  &nbsp; | &nbsp;
+                <a href="{{ url_for('user.logout') }}">Sign Out</a>
+                  {% else %}
+                <a href="{{ url_for('user.login') }}">Sign in</a>
+                  {% endif %}
+                </div>
+              </ul>
+                </div>
+            </nav>
+
+            <div class="with-margins">
+            {% if current_user.is_authenticated() %}
+            <a href="{{ url_for('index') }}">Home</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('plans') }}">Plans</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('demo') }}">Demo</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('getstarted') }}">Stripe Credentials</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('user_profile_page') }}">My Account</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('contactus') }}">Contact Us</a>
+            {% else %}
+            <a href="{{ url_for('index') }}">Home</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('pricing') }}">Pricing</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('demo') }}">Demo</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('user.register') }}">Sign Up</a> &nbsp; | &nbsp;
+            <a href="{{ url_for('contactus') }}">Contact Us</a>
+            {% endif %}
+            <!--<a href="{{ url_for('member_page') }}">Members</a> &nbsp; | &nbsp;-->
+            <!--<a href="{{ url_for('admin_page') }}">Admin</a> &nbsp; | &nbsp;-->
+            </div>
+
+          </div>
+        </div>
+          </div>
+        </div>
+  </body>
+</html>

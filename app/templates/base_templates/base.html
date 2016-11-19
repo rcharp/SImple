@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SimpleMetrics</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/app/app.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="header-div" class="clearfix with-margins" style="font-family:Century Gothic; padding-top:10px">
+        <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">SimpleMetrics</span></a></div>
+        <div class="pull-right">
+            {% if current_user.is_authenticated() %}
+                <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name or
+                    current_user.user_auth.username }}</a>
+                &nbsp; | &nbsp;
+                <a href="{{ url_for('user.logout') }}">Sign Out</a>
+            {% else %}
+                <a href="{{ url_for('user.register') }}">Register</a>
+                &nbsp; | &nbsp;
+                <a href="{{ url_for('user.login') }}">Sign in</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="with-margins" style="font-family:Century Gothic">
+        &nbsp;
+        {% if current_user.is_authenticated() %}
+        <a href="{{ url_for('index') }}">Home</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('plans') }}">Plans</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('index') }}">Dashboard</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('getstarted') }}">Stripe Credentials</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('user_profile_page') }}">My Account</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('contactus') }}">Contact Us</a>
+        {% else %}
+        <a href="{{ url_for('index') }}">Home</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('pricing') }}">Pricing</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('index') }}">Demo</a> &nbsp; | &nbsp;
+        <a href="{{ url_for('contactus') }}">Contact Us</a>
+        {% endif %}
+        <!--<a href="{{ url_for('member_page') }}">Members</a> &nbsp; | &nbsp;-->
+        <!--<a href="{{ url_for('admin_page') }}">Admin</a> &nbsp; | &nbsp;-->
+    </div>
+    <hr class="no-margins"/>
+
+    <div id="main-div" class="with-margins">
+    {# One-time system messages called Flash messages #}
+    {% block flash_messages %}
+        {%- with messages = get_flashed_messages(with_categories=true) -%}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category=='error' %}
+                        {% set category='danger' %}
+                    {% endif %}
+                    <div class="alert alert-{{category}}">{{ message|safe }}</div>
+                {% endfor %}
+            {% endif %}
+        {%- endwith %}
+    {% endblock %}
+
+    {% block main %}{% endblock %}
+    </div>
+
+    <br/>
+    <hr class="no-margins"/>
+    <div id="footer-div" class="clearfix with-margins">
+		<div class="pull-left" style="font-family:Century Gothic; margin-bottom:10px">
+			<div class="row">
+				<div class="col-md-12 menu">
+	          				<a href="/pricing">Pricing</a> &nbsp; | &nbsp;
+	        				<a href="/demo">Demo</a> &nbsp; | &nbsp;
+	          				<a href="user/register">Sign Up</a> &nbsp; | &nbsp;
+							<a href="mailto:support@simplemetrics.io?Subject=" target="_top">Support</a> &nbsp; | &nbsp;
+	          				<a href="http://www.facebook.com">Facebook</a> &nbsp; | &nbsp;
+	        				<a href="http://www.twitter.com">Twitter</a>
+				</div>
+			</div>
+		</div>
+          <div class="pull-right" style="font-family:Century Gothic">
+            © 2016 SimpleMetrics
+          </div>
+    </div>
+</body>
+</html>
