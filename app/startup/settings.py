@@ -25,7 +25,7 @@ MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 MAIL_DEFAULT_SENDER = os.environ.get('MAIL_USERNAME')
 MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 465
-MAIL_USE_SSL = 1  # Use '1' for True and '0' for False
+MAIL_USE_SSL = 0  # Use '1' for True and '0' for False
 MAIL_USE_TLS = 0  # Use '1' for True and '0' for False
 
 ADMINS = []
