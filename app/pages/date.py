@@ -3,7 +3,7 @@ import dateutil.parser
 from datetime import tzinfo, datetime as dtime
 import datetime
 import time
-import app.pages.prettydate
+import app.pages.prettydate as p
 from json import dumps
 
 now = dtime.now()
@@ -63,7 +63,7 @@ def get_datetime(timestamp):
 def pretty_date(timestamp):
     dt = dtime.fromtimestamp(timestamp)
     dt=dt.replace(tzinfo=None)
-    return prettydate.date(dt)
+    return p.date(dt)
 
 def datetime_to_int(dt):
     return time.mktime(dt)
