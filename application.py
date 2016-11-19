@@ -4,6 +4,7 @@
 
 from app.app_and_db import app, db
 from app.startup.init_app import init_app
+import os
 
 application = app
 init_app(application, db)
