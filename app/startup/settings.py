@@ -24,7 +24,7 @@ MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 MAIL_DEFAULT_SENDER = os.environ.get('MAIL_USERNAME')
 MAIL_SERVER = 'mail.getsimplemetrics.com'
-MAIL_PORT = 465
+MAIL_PORT = 143
 MAIL_USE_SSL = 0  # Use '1' for True and '0' for False
 MAIL_USE_TLS = 0  # Use '1' for True and '0' for False
 
