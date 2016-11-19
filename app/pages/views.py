@@ -205,7 +205,7 @@ def pricing():
 @app.route('/plans')
 def plans():
     email=current_user.email
-    return render_template('pages/plans.html', key=os.environ['PUBLISHABLE_KEY'], email=email)
+    return render_template('pages/plans.html', key=os.environ.get('PUBLISHABLE_KEY'), email=email)
 
 @login_required
 @app.route('/charge', methods=['POST'])

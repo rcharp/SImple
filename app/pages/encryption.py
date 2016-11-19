@@ -7,7 +7,7 @@ from simplecrypt import encrypt, decrypt
 BLOCK_SIZE = 32
 # generate a random secret key
 #secret = os.urandom(BLOCK_SIZE)
-secret = os.environ['SECRET_KEY']
+secret = os.environ.get('SECRET_KEY')
 # create a cipher object using the secret
 cipher = AES.new(secret)
 

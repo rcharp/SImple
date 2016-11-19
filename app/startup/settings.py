@@ -10,19 +10,19 @@ APP_NAME = "SimpleMetrics"
 # The settings below can (and should) be over-ruled by OS environment variable settings
 
 # Flask settings                     # Generated with: import os; os.urandom(24)
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # PLEASE USE A DIFFERENT KEY FOR PRODUCTION ENVIRONMENTS!
                                                     
 # SQLAlchemy settings
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 # Cache settings
 
 
 # Flask-Mail settings
-MAIL_USERNAME = os.environ['MAIL_USERNAME']
-MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
-MAIL_DEFAULT_SENDER = os.environ['MAIL_USERNAME']
+MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+MAIL_DEFAULT_SENDER = os.environ.get('MAIL_USERNAME')
 MAIL_SERVER = 'smtp.gmail.com'
 MAIL_PORT = 465
 MAIL_USE_SSL = 1  # Use '1' for True and '0' for False
