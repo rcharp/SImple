@@ -38,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="encryption.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="encryption.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="585">
+            <state vertical-scroll-proportion="0.26030368" vertical-offset="0" max-vertical-offset="585">
               <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5046083" vertical-offset="2391" max-vertical-offset="6150">
+            <state vertical-scroll-proportion="-8.111111" vertical-offset="2391" max-vertical-offset="6150">
               <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
               <folding>
                 <element signature="e#100#109#0" expanded="true" />
@@ -964,22 +964,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
+    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="585">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state vertical-scroll-proportion="-8.111111" vertical-offset="2391" max-vertical-offset="6150">
+          <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#100#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
+    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5046083" vertical-offset="2391" max-vertical-offset="6150">
-          <caret line="174" column="80" selection-start-line="174" selection-start-column="80" selection-end-line="174" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.26030368" vertical-offset="0" max-vertical-offset="585">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <element signature="e#100#109#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
