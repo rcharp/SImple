@@ -95,12 +95,15 @@
 
    <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
     <script type="text/javascript">
-      window.loading_screen = window.pleaseWait({
-        logo: "assets/images/logo.png",
-        backgroundColor: '#459ce7',
-        loadingHtml: "<p class='loading-message'>Please wait while we load your transactions...</p>"
-      });
+        var loading_screen = pleaseWait({
+            logo: "assets/images/pathgather.png",
+            backgroundColor: '#459ce7',
+            loadingHtml: "<div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+        });
+
+        window.onload = finish(loading_screen)
     </script>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 
        </body>
