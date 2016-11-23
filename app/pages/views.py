@@ -181,7 +181,7 @@ def getstarted():
                                    net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
                                    canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
                 else:
-                    u.credentials = 1
+                    u.credentials = 0
                     session['api_key'] = ""
                     db.session.commit()
                     flash(_('Your API credentials were invalid, please enter them again.'), 'error')
