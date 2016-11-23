@@ -1,4 +1,5 @@
 import base64
+import os
 
 from Crypto import Random
 from Crypto.Cipher import AES
