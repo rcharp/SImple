@@ -38,8 +38,83 @@ stripe_keys = {
 
 ## home pages and redirects ##################
 @app.route('/', methods = ['GET'])
+##@login_required
 def home():
-    return redirect(url_for('index'))
+    #session.clear()
+    if current_user.is_authenticated():
+        # check to see if items are in session, this helps us to not make multiple API calls
+        if 'api_key' in session:
+            stripe.api_key = session['api_key']
+        if 'events' in session:
+            if len(session['events']) > 0:
+                events = []
+                for y in session['events'][0:19]:
+                    x = json.loads(y)
+                    p_date = pretty_date(x['dateint'])
+                    event = Event(x['amount'],x['dateint'],x['date'],x['name'],x['type'],x['plan'],
+                                  p_date,
+                                  x['customer_id'])
+
+                    events.append(event)
+
+                current = session['current']
+                per = session['percentages']
+                churn = session['churn']
+                ltv = session['ltv']
+
+                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
+                                   annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
+                                   canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
+                                   net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
+                                   canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
+            else:
+                clear_session() # clear the empty session
+                events, current, per, churn, ltv = run()
+                stripeErrors = returnErrors()
+                if stripeErrors.AuthenticationError:
+                    print stripeErrors.AuthenticationError
+                    u = current_user.user_auth
+                    u.credentials = 0
+                    db.session.commit()
+                    flash(_('Your API credentials were invalid, please enter them again.'), 'error')
+                    return render_template('pages/getstarted.html')
+                elif stripeErrors.APIConnectionError:
+                    print stripeErrors.APIConnectionError
+                    flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
+                    return render_template('pages/getstarted.html')
+                else:
+                    return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],
+                                           net_revenue=current[2],annual=current[3],customers=current[4],
+                                           new_customers=current[5], arpu=current[6],canceled=current[7],
+                                           upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
+                                           net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],
+                                           arpuP=per[6],canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
+                                           ltv = ltv)
+        # otherwise make an api call
+        else:
+            events, current, per, churn, ltv = run()
+            stripeErrors = returnErrors()
+            if stripeErrors.AuthenticationError:
+                print stripeErrors.AuthenticationError
+                u = current_user.user_auth
+                u.credentials = 0
+                db.session.commit()
+                flash(_('Your API credentials were invalid, please enter them again.'), 'error')
+                return render_template('pages/getstarted.html')
+            elif stripeErrors.APIConnectionError:
+                print stripeErrors.APIConnectionError
+                flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
+                return render_template('pages/getstarted.html')
+            else:
+                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
+                               annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
+                               canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
+                               net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
+                               canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
+                               ltv = ltv)
+    else:
+        #flash(_('Please login or signup to access this page.'), 'error')
+        return render_template('pages/welcome.html')
 
 @app.route('/index', methods = ['GET'])
 ##@login_required
