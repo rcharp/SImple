@@ -401,3 +401,7 @@ def portfolio():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('pages/404.html'), 404
+
+@app.errorhandler(werkzeug.exceptions.BadRequest)
+def handle_bad_request(e):
+    return render_template('pages/404.html'), 404

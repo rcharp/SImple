@@ -38,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="encryption.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="encryption.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5365474" vertical-offset="45" max-vertical-offset="1260">
+            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1260">
               <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.259259" vertical-offset="2360" max-vertical-offset="6150">
-              <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.9269481" vertical-offset="5534" max-vertical-offset="6210">
+              <caret line="406" column="49" selection-start-line="406" selection-start-column="49" selection-end-line="406" selection-end-column="49" />
               <folding>
                 <element signature="e#100#109#0" expanded="true" />
               </folding>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/app/startup/settings.py" />
         <option value="$PROJECT_DIR$/app/pages/date.py" />
         <option value="$PROJECT_DIR$/app/templates/pages/welcome_email.html" />
-        <option value="$PROJECT_DIR$/app/pages/views.py" />
         <option value="$PROJECT_DIR$/app/pages/encryption.py" />
+        <option value="$PROJECT_DIR$/app/pages/views.py" />
       </list>
     </option>
   </component>
@@ -900,22 +900,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
+    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.259259" vertical-offset="2360" max-vertical-offset="6150">
-          <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1260">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding>
-            <element signature="e#100#109#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/encryption.py">
+    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5365474" vertical-offset="45" max-vertical-offset="1260">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.9269481" vertical-offset="5534" max-vertical-offset="6210">
+          <caret line="406" column="49" selection-start-line="406" selection-start-column="49" selection-end-line="406" selection-end-column="49" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#100#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
