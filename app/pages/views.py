@@ -29,10 +29,10 @@ from calc import chartify
 stripeErrors = stripeErrorClass()
 
 ### stripe ####################################
-app.config.from_pyfile('keys.cfg')
+#app.config.from_pyfile('keys.cfg')
 stripe_keys = {
-    #'secret_key': os.environ.get('STRIPE_SECRET_KEY')
-    'secret_key': app.config['SECRET_KEY']
+    'secret_key': os.environ.get('STRIPE_SECRET_KEY')
+    #'secret_key': app.config['SECRET_KEY']
 }
 
 
