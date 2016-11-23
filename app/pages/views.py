@@ -400,8 +400,10 @@ def portfolio():
 ## error handling ##################################
 @app.errorhandler(404)
 def page_not_found(e):
+    app.logger.error('Page not found error: %s', (e))
     return render_template('pages/404.html'), 404
 
 @app.errorhandler(Exception)
 def handle_bad_request(e):
+    app.logger.error('Unhandled Exception: %s', (e))
     return render_template('pages/404.html'), 404
