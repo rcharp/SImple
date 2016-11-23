@@ -3,7 +3,7 @@ import base64
 import os
 
 # the block size for the cipher object; must be 16, 24, or 32 for AES
-BLOCK_SIZE = 32
+BLOCK_SIZE = 16
 
 # set the secret key and the IV
 secret = os.environ.get('SECRET_KEY')
