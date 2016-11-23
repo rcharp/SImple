@@ -20,16 +20,23 @@
 	<script src="/static/js/theme.js"></script>
 	<script src="/static/js/vendor/jquery.isotope.min.js"></script>
 
+    <!-- Please wait -->
+    <link href="/static/css/pleasewait/please-wait.css" rel="stylesheet">
+
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
    <body id="portfolio" style="background-color:#FFFFFF; margin-top:-8px; margin-bottom:-50px" height="100%" width="100%">
-       <div id="showcase" width="100%">
-           <div class="container" style="margin-bottom:100px" width="100%">
-                   <div class="col-md-14" style="float:center; margin:auto">
-                       <div class="project" width="100%">
-                          <h1>Finding Your Stripe API Credentials</h1>
+
+   <!-- Please wait loader -->
+   <div class="inner" ng-view></div>
+
+   <div id="showcase" width="100%">
+       <div class="container" style="margin-bottom:100px" width="100%">
+               <div class="col-md-14" style="float:center; margin:auto">
+                   <div class="project" width="100%">
+                      <h1>Finding Your Stripe API Credentials</h1>
       <br>
       <p class="description">
       In order for you to take advantage of all that SimpleMetrics has to offer, we need a little bit of information from you. More specifically, we need access to your Stripe API in order to pull transaction history from your account. Use the following
@@ -85,6 +92,17 @@
                       </div>
               </div>
           </div>
+
+   <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
+    <script type="text/javascript">
+      window.loading_screen = window.pleaseWait({
+        logo: "assets/images/logo.png",
+        backgroundColor: '#459ce7',
+        loadingHtml: "<p class='loading-message'>Please wait while we load your transactions...</p>"
+      });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+
        </body>
 </html>
 {% endblock %}
