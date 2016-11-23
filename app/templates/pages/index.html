@@ -19,6 +19,8 @@
     <link href="/static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- jVectorMap -->
     <link href="/static/css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
+    <!-- Please wait -->
+    <link href="/static/css/pleasewait/please-wait.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="/static/css/custom.min.css" rel="stylesheet">
@@ -614,6 +616,20 @@
     <!-- Datatables -->
     <!-- Chart.js -->
     <script src="static/vendors/Chart.js/dist/Chart.min.js"></script>
+
+    <!-- please wait -->
+    <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
+    <script type="text/javascript">
+        var loading_screen = pleaseWait({
+            logo: "assets/images/pathgather.png",
+            backgroundColor: '#459ce7',
+            loadingHtml: "<div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+        });
+
+        window.onload = finish(loading_screen)
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 
     <!-- Chart.js -->
     <script>
