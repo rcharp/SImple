@@ -21,13 +21,17 @@
     <link href="/static/css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
     <!-- Please wait -->
     <link href="/static/css/pleasewait/please-wait.css" rel="stylesheet">
+    <!-- spinkit -->
+    <link href="/static/css/spinkit/css/spinners/3-wave.css" rel="stylesheet">
+    <link href="/static/css/spinkit/css/spinners/7-three-bounce.css" rel="stylesheet">
+    <link href="/static/css/spinkit/css/spinners/8-circle.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="/static/css/custom.min.css" rel="stylesheet">
     <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
   </head>
   <body class="nav-md">
-    <div class="inner" ng-view>
+    <div class="inner" ng-view> <!-- start of inner to hide page for loading -->
     <div class="container body">
       <div class="main_container">
         <!-- top navigation -->
@@ -624,7 +628,13 @@
         var loading_screen = pleaseWait({
             logo: "assets/images/pathgather.png",
             backgroundColor: '#459ce7',
-            loadingHtml: "<div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div>"
+            loadingHtml: "<div class="sk-wave">
+                <div class="sk-wave sk-rect1"></div>
+                <div class="sk-wave sk-rect2"></div>
+                <div class="sk-wave sk-rect3"></div>
+                <div class="sk-wave sk-rect4"></div>
+                <div class="sk-wave sk-rect5"></div>
+                </div>"
         });
 
         window.onload = loading_screen.finish()
