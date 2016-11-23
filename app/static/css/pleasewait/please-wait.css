@@ -109,6 +109,13 @@ body.pg-loading {
   opacity: 1;
 }
 
+.loadMessage {
+  font-family: "Century Gothic";
+  font-size: 40px;
+  font-weight: bold;
+  font-color: #ffffff
+}
+
 @-webkit-keyframes pgAnimLoading {
   from {
     opacity: 0;

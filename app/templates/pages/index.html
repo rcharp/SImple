@@ -625,16 +625,13 @@
     <!-- please wait -->
     <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
     <script type="text/javascript">
+        var str = "Please wait while we load your dashboard...";
+        str = str.fontcolor("white");
+        str = str.fontsize(5);
         var loading_screen = pleaseWait({
-            logo: "assets/images/pathgather.png",
+            logo: "/static/css/spinkit/loader.gif",
             backgroundColor: '#459ce7',
-            loadingHtml: "<div class="sk-wave">
-                <div class="sk-wave sk-rect1"></div>
-                <div class="sk-wave sk-rect2"></div>
-                <div class="sk-wave sk-rect3"></div>
-                <div class="sk-wave sk-rect4"></div>
-                <div class="sk-wave sk-rect5"></div>
-                </div>"
+            loadingHtml: str
         });
 
         window.onload = loading_screen.finish()
