@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-370.0" vertical-offset="555" max-vertical-offset="15705">
-              <caret line="629" column="28" selection-start-line="629" selection-start-column="28" selection-end-line="629" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.5693069" vertical-offset="345" max-vertical-offset="15690">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -64,14 +64,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8756219" vertical-offset="5907" max-vertical-offset="6525">
+            <state vertical-scroll-proportion="-9.0" vertical-offset="5907" max-vertical-offset="6525">
               <caret line="410" column="3" selection-start-line="410" selection-start-column="3" selection-end-line="410" selection-end-column="3" />
               <folding>
                 <element signature="e#100#109#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="please-wait.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/css/pleasewait/please-wait.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2190" max-vertical-offset="4530">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,8 +175,8 @@
         <option value="$PROJECT_DIR$/app/pages/encryption.py" />
         <option value="$PROJECT_DIR$/app/templates/pages/getstarted.html" />
         <option value="$PROJECT_DIR$/app/static/css/pleasewait/please-wait.css" />
-        <option value="$PROJECT_DIR$/app/templates/pages/index.html" />
         <option value="$PROJECT_DIR$/app/pages/views.py" />
+        <option value="$PROJECT_DIR$/app/templates/pages/index.html" />
       </list>
     </option>
   </component>
@@ -977,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/pleasewait/please-wait.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4515">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/spinkit/examples/3-wave.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.041666" vertical-offset="596" max-vertical-offset="1215">
@@ -1001,24 +1003,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
+    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-370.0" vertical-offset="555" max-vertical-offset="15705">
-          <caret line="629" column="28" selection-start-line="629" selection-start-column="28" selection-end-line="629" selection-end-column="28" />
+        <state vertical-scroll-proportion="-9.0" vertical-offset="5907" max-vertical-offset="6525">
+          <caret line="410" column="3" selection-start-line="410" selection-start-column="3" selection-end-line="410" selection-end-column="3" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#100#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/views.py">
+    <entry file="file://$PROJECT_DIR$/app/static/css/pleasewait/please-wait.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8756219" vertical-offset="5907" max-vertical-offset="6525">
-          <caret line="410" column="3" selection-start-line="410" selection-start-column="3" selection-end-line="410" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2190" max-vertical-offset="4530">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5693069" vertical-offset="345" max-vertical-offset="15690">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding>
-            <element signature="e#100#109#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

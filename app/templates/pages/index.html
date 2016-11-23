@@ -31,6 +31,20 @@
     <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
   </head>
   <body class="nav-md">
+  <!-- please wait -->
+    <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
+    <script type="text/javascript">
+        var str = "Please wait while we load your dashboard...";
+        str = str.fontcolor("white");
+        str = str.fontsize(5);
+        var loading_screen = pleaseWait({
+            logo: "/static/css/spinkit/loader.gif",
+            backgroundColor: '#459ce7',
+            loadingHtml: str
+        });
+
+        window.onload = loading_screen.finish()
+    </script>
     <div class="inner" ng-view> <!-- start of inner to hide page for loading -->
     <div class="container body">
       <div class="main_container">
@@ -621,21 +635,6 @@
     <!-- Datatables -->
     <!-- Chart.js -->
     <script src="static/vendors/Chart.js/dist/Chart.min.js"></script>
-
-    <!-- please wait -->
-    <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
-    <script type="text/javascript">
-        var str = "Please wait while we load your dashboard...";
-        str = str.fontcolor("white");
-        str = str.fontsize(5);
-        var loading_screen = pleaseWait({
-            logo: "/static/css/spinkit/loader.gif",
-            backgroundColor: '#459ce7',
-            loadingHtml: str
-        });
-
-        window.onload = loading_screen.finish()
-    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 
