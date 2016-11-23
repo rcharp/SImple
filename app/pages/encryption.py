@@ -22,9 +22,9 @@ class AESCipher:
 
     def decrypt( self, enc ):
         enc = base64.b64decode(enc + "===")
-        iv = enc[:16]
+        iv = enc[:32]
         cipher = AES.new(self.key, AES.MODE_CBC, iv )
-        return unpad(cipher.decrypt( enc[16:] ))
+        return unpad(cipher.decrypt( enc[32:] ))
 
 
 cipher = AESCipher(os.environ.get('SECRET_KEY'))
