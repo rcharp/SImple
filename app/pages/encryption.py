@@ -4,7 +4,7 @@ import os
 from Crypto import Random
 from Crypto.Cipher import AES
 
-BS = 32
+BS = 16
 pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
 unpad = lambda s : s[0:-ord(s[-1])]
 
@@ -22,9 +22,9 @@ class AESCipher:
 
     def decrypt( self, enc ):
         enc = base64.b64decode(enc + "===")
-        iv = enc[:32]
+        iv = enc[:16]
         cipher = AES.new(self.key, AES.MODE_CBC, iv )
-        return unpad(cipher.decrypt( enc[32:] ))
+        return unpad(cipher.decrypt( enc[16:] ))
 
 
 cipher = AESCipher(os.environ.get('SECRET_KEY'))
