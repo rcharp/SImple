@@ -263,7 +263,7 @@ def getstarted():
         u = current_user.user_auth
         if u.credentials == 1:
             key = decode(u.api_key)
-            print "key is " + key
+            print "key is " + u.api_key
         else:
             key = " "
         if request.method == 'POST':
