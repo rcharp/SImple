@@ -262,7 +262,7 @@ def getstarted():
     if current_user.is_authenticated():
         u = current_user.user_auth
         if u.credentials == 1:
-            key = decode(u.api_key)
+            key = decode(u.api_key).decode('utf-8')
             print "key is " + u.api_key
         else:
             key = " "
