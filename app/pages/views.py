@@ -29,7 +29,7 @@ from calc import chartify
 stripeErrors = stripeErrorClass()
 
 ### stripe ####################################
-#app.config.from_pyfile('keys.cfg')
+# app.config.from_pyfile('keys.cfg')
 stripe_keys = {
     'secret_key': os.environ.get('STRIPE_SECRET_KEY')
     #'secret_key': app.config['SECRET_KEY']
@@ -37,7 +37,7 @@ stripe_keys = {
 
 
 ## home pages and redirects ##################
-@app.route('/', methods = ['GET'])
+@app.route('/', methods=['GET'])
 ##@login_required
 def home():
     #session.clear()
@@ -51,7 +51,7 @@ def home():
                 for y in session['events'][0:19]:
                     x = json.loads(y)
                     p_date = pretty_date(x['dateint'])
-                    event = Event(x['amount'],x['dateint'],x['date'],x['name'],x['type'],x['plan'],
+                    event = Event(x['amount'], x['dateint'], x['date'], x['name'], x['type'], x['plan'],
                                   p_date,
                                   x['customer_id'])
 
@@ -62,13 +62,17 @@ def home():
                 churn = session['churn']
                 ltv = session['ltv']
 
-                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                                   annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                                   canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                                   net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                                   canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
+                return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                       net_revenue=current[2],
+                                       annual=current[3], customers=current[4], new_customers=current[5],
+                                       arpu=current[6],
+                                       canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                                       refundsP=per[1],
+                                       net_revenueP=per[2], annualP=per[3], customersP=per[4], new_customersP=per[5],
+                                       arpuP=per[6],
+                                       canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn, ltv=ltv)
             else:
-                clear_session() # clear the empty session
+                clear_session()  # clear the empty session
                 events, current, per, churn, ltv = run()
                 stripeErrors = returnErrors()
                 if stripeErrors.AuthenticationError:
@@ -83,13 +87,15 @@ def home():
                     flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
                     return render_template('pages/getstarted.html')
                 else:
-                    return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],
-                                           net_revenue=current[2],annual=current[3],customers=current[4],
-                                           new_customers=current[5], arpu=current[6],canceled=current[7],
-                                           upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                                           net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],
-                                           arpuP=per[6],canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
-                                           ltv = ltv)
+                    return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                           net_revenue=current[2], annual=current[3], customers=current[4],
+                                           new_customers=current[5], arpu=current[6], canceled=current[7],
+                                           upgrades=current[8], downgrades=current[9], mrrP=per[0], refundsP=per[1],
+                                           net_revenueP=per[2], annualP=per[3], customersP=per[4],
+                                           new_customersP=per[5],
+                                           arpuP=per[6], canceledP=per[7], upgradesP=per[8], downgradesP=per[9],
+                                           churn=churn,
+                                           ltv=ltv)
         # otherwise make an api call
         else:
             events, current, per, churn, ltv = run()
@@ -106,17 +112,22 @@ def home():
                 flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
                 return render_template('pages/getstarted.html')
             else:
-                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                               annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                               canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                               net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                               canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
-                               ltv = ltv)
+                return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                       net_revenue=current[2],
+                                       annual=current[3], customers=current[4], new_customers=current[5],
+                                       arpu=current[6],
+                                       canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                                       refundsP=per[1],
+                                       net_revenueP=per[2], annualP=per[3], customersP=per[4], new_customersP=per[5],
+                                       arpuP=per[6],
+                                       canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn,
+                                       ltv=ltv)
     else:
         #flash(_('Please login or signup to access this page.'), 'error')
         return render_template('pages/welcome.html')
 
-@app.route('/index', methods = ['GET'])
+
+@app.route('/index', methods=['GET'])
 ##@login_required
 def index():
     #session.clear()
@@ -130,7 +141,7 @@ def index():
                 for y in session['events'][0:19]:
                     x = json.loads(y)
                     p_date = pretty_date(x['dateint'])
-                    event = Event(x['amount'],x['dateint'],x['date'],x['name'],x['type'],x['plan'],
+                    event = Event(x['amount'], x['dateint'], x['date'], x['name'], x['type'], x['plan'],
                                   p_date,
                                   x['customer_id'])
 
@@ -141,13 +152,17 @@ def index():
                 churn = session['churn']
                 ltv = session['ltv']
 
-                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                                   annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                                   canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                                   net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                                   canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
+                return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                       net_revenue=current[2],
+                                       annual=current[3], customers=current[4], new_customers=current[5],
+                                       arpu=current[6],
+                                       canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                                       refundsP=per[1],
+                                       net_revenueP=per[2], annualP=per[3], customersP=per[4], new_customersP=per[5],
+                                       arpuP=per[6],
+                                       canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn, ltv=ltv)
             else:
-                clear_session() # clear the empty session
+                clear_session()  # clear the empty session
                 events, current, per, churn, ltv = run()
                 stripeErrors = returnErrors()
                 if stripeErrors.AuthenticationError:
@@ -162,13 +177,15 @@ def index():
                     flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
                     return render_template('pages/getstarted.html')
                 else:
-                    return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],
-                                           net_revenue=current[2],annual=current[3],customers=current[4],
-                                           new_customers=current[5], arpu=current[6],canceled=current[7],
-                                           upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                                           net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],
-                                           arpuP=per[6],canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
-                                           ltv = ltv)
+                    return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                           net_revenue=current[2], annual=current[3], customers=current[4],
+                                           new_customers=current[5], arpu=current[6], canceled=current[7],
+                                           upgrades=current[8], downgrades=current[9], mrrP=per[0], refundsP=per[1],
+                                           net_revenueP=per[2], annualP=per[3], customersP=per[4],
+                                           new_customersP=per[5],
+                                           arpuP=per[6], canceledP=per[7], upgradesP=per[8], downgradesP=per[9],
+                                           churn=churn,
+                                           ltv=ltv)
         # otherwise make an api call
         else:
             events, current, per, churn, ltv = run()
@@ -185,32 +202,38 @@ def index():
                 flash(_('Trouble connecting to Stripe. Please wait a minute and try again.'), 'error')
                 return render_template('pages/getstarted.html')
             else:
-                return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                               annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                               canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                               net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                               canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,
-                               ltv = ltv)
+                return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                       net_revenue=current[2],
+                                       annual=current[3], customers=current[4], new_customers=current[5],
+                                       arpu=current[6],
+                                       canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                                       refundsP=per[1],
+                                       net_revenueP=per[2], annualP=per[3], customersP=per[4], new_customersP=per[5],
+                                       arpuP=per[6],
+                                       canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn,
+                                       ltv=ltv)
     else:
         #flash(_('Please login or signup to access this page.'), 'error')
         return render_template('pages/welcome.html')
 
-@app.route('/data/<string:metric>', methods = ['GET'])
+
+@app.route('/data/<string:metric>', methods=['GET'])
 def data(metric):
     if 'events' in session:
         events = []
         for y in session['events']:
             x = json.loads(y)
             p_date = pretty_date(x['dateint'])
-            event = Event(x['amount'],x['dateint'],x['date'],x['name'],x['type'],x['plan'],p_date,
+            event = Event(x['amount'], x['dateint'], x['date'], x['name'], x['type'], x['plan'], p_date,
                           x['customer_id'])
             events.append(event)
 
         dates, amounts = chartify(events, metric)
         metric = metric.replace("_", " ").title()
-        return render_template('pages/data.html', metric=metric, dates=dates,amounts=amounts)
+        return render_template('pages/data.html', metric=metric, dates=dates, amounts=amounts)
     else:
         return redirect(url_for('index'))
+
 
 @app.route('/refresh')
 @login_required
@@ -219,15 +242,19 @@ def refresh():
         stripe.api_key = session['api_key']
     clear_session()
     events, current, per, churn, ltv = update()
-    return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                           annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                           canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                           net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                           canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
+    return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                           net_revenue=current[2],
+                           annual=current[3], customers=current[4], new_customers=current[5], arpu=current[6],
+                           canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                           refundsP=per[1],
+                           net_revenueP=per[2], annualP=per[3], customersP=per[4], new_customersP=per[5], arpuP=per[6],
+                           canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn, ltv=ltv)
+
 
 @app.route('/welcome')
 def welcome():
     return render_template('pages/welcome.html')
+
 
 ##pricing and signup ##########################
 @app.route('/getstarted', methods=['GET', 'POST'])
@@ -236,12 +263,13 @@ def getstarted():
         u = current_user.user_auth
         if u.credentials == 1:
             key = decode(u.api_key)
+            print "key is " + key
         else:
             key = " "
-        if request.method=='POST':
+        if request.method == 'POST':
             if request.form.get('key'):
-                if (request.form.get('key').startswith('sk_live') or request.form.get('key').startswith('sk_test')) and \
-                                len(request.form.get('key')) == 32:
+                if (request.form.get('key').startswith('sk_live') or request.form.get('key').startswith('sk_test'))\
+                        and len(request.form.get('key')) == 32:
                     u.api_key = encode(request.form.get('key'))
                     u.credentials = 1
                     session['api_key'] = request.form.get('key')
@@ -250,11 +278,15 @@ def getstarted():
                     #flash(_('Successfully updated API credentials'), 'success')
                     stripe.api_key = session['api_key']
                     events, current, per, churn, ltv = run()
-                    return render_template('pages/index.html', events=events,mrr=current[0],refunds=current[1],net_revenue=current[2],
-                                   annual=current[3],customers=current[4],new_customers=current[5], arpu=current[6],
-                                   canceled=current[7],upgrades=current[8],downgrades=current[9],mrrP=per[0],refundsP=per[1],
-                                   net_revenueP=per[2],annualP=per[3],customersP=per[4],new_customersP=per[5],arpuP=per[6],
-                                   canceledP=per[7],upgradesP=per[8],downgradesP=per[9],churn=churn,ltv = ltv)
+                    return render_template('pages/index.html', events=events, mrr=current[0], refunds=current[1],
+                                           net_revenue=current[2],
+                                           annual=current[3], customers=current[4], new_customers=current[5],
+                                           arpu=current[6],
+                                           canceled=current[7], upgrades=current[8], downgrades=current[9], mrrP=per[0],
+                                           refundsP=per[1],
+                                           net_revenueP=per[2], annualP=per[3], customersP=per[4],
+                                           new_customersP=per[5], arpuP=per[6],
+                                           canceledP=per[7], upgradesP=per[8], downgradesP=per[9], churn=churn, ltv=ltv)
                 else:
                     u.credentials = 0
                     session['api_key'] = ""
@@ -269,6 +301,7 @@ def getstarted():
     else:
         return redirect(url_for('user.login'))
 
+
 @app.route('/pricing')
 def pricing():
     if current_user.is_authenticated():
@@ -276,16 +309,17 @@ def pricing():
     else:
         return render_template('pages/pricing.html')
 
+
 @login_required
 @app.route('/plans')
 def plans():
-    email=current_user.email
+    email = current_user.email
     return render_template('pages/plans.html', key=os.environ.get('PUBLISHABLE_KEY'), email=email)
+
 
 @login_required
 @app.route('/charge', methods=['POST'])
 def charge():
-
     # Set the api key to Simple Metrics to create the customer and charge their card
     stripe.api_key = stripe_keys['secret_key']
 
@@ -343,19 +377,22 @@ def charge():
         flash(_('Please login first.'), 'error')
         return render_template('pages/index.html')
 
+
 @login_required
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
     yes = url_for('delete_account')
     no = url_for('user_profile_page')
-    flash(_('Are you sure you want to delete your account? This can\'t be undone. &nbsp;&nbsp;<a href="%(yes)s">Delete</a> '
-            '&nbsp; <a href="%(no)s">Cancel</a>', yes=yes, no=no), 'error')
+    flash(_(
+        'Are you sure you want to delete your account? This can\'t be undone. &nbsp;&nbsp;<a href="%(yes)s">Delete</a> '
+        '&nbsp; <a href="%(no)s">Cancel</a>', yes=yes, no=no), 'error')
     return redirect('user/profile')
+
 
 @login_required
 @app.route('/delete_account', methods=['GET', 'POST'])
 def delete_account():
-    if request.method=='GET':
+    if request.method == 'GET':
         if current_user.is_authenticated():
 
             # Delete stripe subscription
@@ -382,13 +419,15 @@ def delete_account():
     else:
         return redirect('/')
 
+
 ## data ################################
-@app.route('/demo', methods = ['GET'])
+@app.route('/demo', methods=['GET'])
 def demo():
     return redirect('pages/index.html')
 
+
 @login_required
-@app.route('/dashboard', methods = ['GET'])
+@app.route('/dashboard', methods=['GET'])
 def dashboard():
     """
     if current_user.is_authenticated():
@@ -423,13 +462,14 @@ def dashboard():
             return render_template('pages/plans.html', key=stripe_keys['publishable_key'], email=email)
     else:
     """
-        #flash(_('Please login first.'), 'error')
+    #flash(_('Please login first.'), 'error')
     return redirect('pages/index.html')
+
 
 ## contact ######################################
 @app.route('/contactus', methods=['GET', 'POST'])
 def contactus():
-    if request.method=='POST':
+    if request.method == 'POST':
         if current_user.is_authenticated():
             email = current_user.email
         else:
@@ -439,9 +479,10 @@ def contactus():
         contact_us_email(email, message)
 
         flash(_('Your email has been successfully sent! We\'ll get back to you as soon as possible.'), 'success')
-        return render_template('pages/contact_us.html', email = email, message = message)
+        return render_template('pages/contact_us.html', email=email, message=message)
     else:
         return render_template('pages/contact_us.html')
+
 
 ## other pages ###################################
 # The home page is the same as /
@@ -452,20 +493,24 @@ def home_page():
     else:
         return redirect('pages/welcome.html')
 
+
 @app.route('/member')
-@login_required             # Limits access to authenticated users
+@login_required  # Limits access to authenticated users
 def member_page():
     return render_template('pages/member_page.html')
 
+
 # The Admin page is accessible to users with the 'admin' role
 @app.route('/admin')
-@roles_required('admin')    # Limits access to users with the 'admin' role
+@roles_required('admin')  # Limits access to users with the 'admin' role
 def admin_page():
     return render_template('pages/admin_page.html')
 
-@app.route('/gallery', methods = ['GET'])
+
+@app.route('/gallery', methods=['GET'])
 def gallery():
     return render_template('pages/gallery.html', run_rate=2700)
+
 
 @app.route('/portfolio')
 def portfolio():
@@ -477,6 +522,7 @@ def portfolio():
 def page_not_found(e):
     app.logger.error('Page not found error: %s', (e))
     return render_template('pages/404.html'), 404
+
 
 """
 @app.errorhandler(Exception)
