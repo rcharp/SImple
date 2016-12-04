@@ -42,7 +42,7 @@ class UserAuth(db.Model, UserMixin):
     customer = db.Column(db.String(255), nullable=False, server_default='')
 
     # API credentials
-    api_key = db.Column(db.String(50), nullable=True, unique=True)
+    api_key = db.Column(db.String(255), nullable=True, unique=True)
 
     # Relationships
     user = db.relationship('User', uselist=False)
