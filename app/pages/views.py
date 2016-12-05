@@ -136,6 +136,7 @@ def index():
         if 'api_key' in session:
             stripe.api_key = session['api_key']
         if 'events' in session:
+            print "there are events in the session"
             if len(session['events']) > 0:
                 events = []
                 for y in session['events'][0:19]:
@@ -188,6 +189,7 @@ def index():
                                            ltv=ltv)
         # otherwise make an api call
         else:
+            print "there are no events in the session"
             events, current, per, churn, ltv = run()
             stripeErrors = returnErrors()
             if stripeErrors.AuthenticationError:
@@ -262,8 +264,8 @@ def getstarted():
     if current_user.is_authenticated():
         u = current_user.user_auth
         if u.credentials == 1:
-            key = decode(u.api_key).decode('utf-8')
-            print "key is " + u.api_key
+            key = decode(u.api_key)
+            print key
         else:
             key = " "
         if request.method == 'POST':

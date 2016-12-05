@@ -1,19 +1,37 @@
-from Crypto.Cipher import AES
+#!/usr/bin/env python
+
 import base64
 import os
+from Crypto import Random
+from Crypto.Cipher import AES
 
-# the block size for the cipher object; must be 16, 24, or 32 for AES
-BLOCK_SIZE = 32
+BS = 16
+pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+unpad = lambda s : s[0:-ord(s[-1])]
 
-# set the secret key
 secret = os.environ.get('SECRET_KEY')
 
-def encode(plaintext):
-    IV = Random.new().read(BLOCK_SIZE)
-    aes = AES.new(secret, AES.MODE_CBC, IV)
-    return base64.b64encode(aes.encrypt(plaintext))
+class AESCipher:
 
-def decode(encrypted):
-    IV = Random.new().read(BLOCK_SIZE)
-    aes = AES.new(secret, AES.MODE_CBC, IV)
-    return aes.decrypt(base64.b64decode(encrypted))
+    def __init__( self, key ):
+        self.key = key
+
+    def encrypt( self, raw ):
+        raw = pad(raw)
+        iv = Random.new().read( AES.block_size )
+        cipher = AES.new( self.key, AES.MODE_CBC, iv )
+        return base64.b64encode( iv + cipher.encrypt( raw ) )
+
+    def decrypt( self, enc ):
+        enc = base64.b64decode(enc)
+        iv = enc[:16]
+        cipher = AES.new(self.key, AES.MODE_CBC, iv )
+        return unpad(cipher.decrypt( enc[16:] ))
+
+cipher = AESCipher(secret)
+
+def encode(plaintext):
+    return cipher.encrypt(plaintext)
+
+def decode(encoded):
+    return cipher.decrypt(encoded)
