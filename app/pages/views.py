@@ -25,6 +25,8 @@ import Queue
 from events import *
 from stripeErrorClass import stripeErrorClass
 from calc import chartify
+import demo_variables
+import decimal
 
 stripeErrors = stripeErrorClass()
 
@@ -425,7 +427,30 @@ def delete_account():
 ## data ################################
 @app.route('/demo', methods=['GET'])
 def demo():
-    return redirect('pages/index.html')
+    demo_list = []
+    for x in range(19):
+
+        event = Event()
+        event.type = random.choice(demo_variables.types)
+        event.name = random.choice(demo_variables.names)
+        event.dateint = demo_variables.datetime_to_int(demo_variables.random_date(one_month_ago, now).timetuple())
+        event.p_date = pretty_date(event.dateint)
+        event.plan = random.choice(demo_variables.plans)
+        if event.type == "charge.refunded":
+            event.amount = -random.choice(demo_variables.amounts)
+        else:
+            event.amount = random.choice(demo_variables.amounts)
+
+        demo_list.append(event)
+
+    demo_list.sort(key=lambda  x: x.dateint, reverse=True)
+
+    return render_template('pages/demo.html', events=demo_list, mrr=2013, refunds=-275,
+                           net_revenue=2598,annual=31176, customers=52, new_customers=17,
+                           arpu=72.81,canceled=3, upgrades=13, downgrades=7,
+                           mrrP=29.6,refundsP=12.9,net_revenueP=86.6, annualP=-21.6, customersP=36.8,
+                           new_customersP=17.1, arpuP=5.6,canceledP=-3.1, upgradesP=9.2,
+                           downgradesP=5.4, churn=8.5, ltv=103)
 
 
 @login_required
