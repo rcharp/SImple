@@ -25,7 +25,7 @@ import Queue
 from events import *
 from stripeErrorClass import stripeErrorClass
 from calc import chartify
-import demo_variables
+import demoVars
 import decimal
 
 stripeErrors = stripeErrorClass()
@@ -431,15 +431,15 @@ def demo():
     for x in range(19):
 
         event = Event()
-        event.type = random.choice(demo_variables.types)
-        event.name = random.choice(demo_variables.names)
-        event.dateint = demo_variables.datetime_to_int(demo_variables.random_date(one_month_ago, now).timetuple())
+        event.type = random.choice(demoVars.types)
+        event.name = random.choice(demoVars.names)
+        event.dateint = demoVars.datetime_to_int(demoVars.random_date(one_month_ago, now).timetuple())
         event.p_date = pretty_date(event.dateint)
-        event.plan = random.choice(demo_variables.plans)
+        event.plan = random.choice(demoVars.plans)
         if event.type == "charge.refunded":
-            event.amount = -random.choice(demo_variables.amounts)
+            event.amount = -random.choice(demoVars.amounts)
         else:
-            event.amount = random.choice(demo_variables.amounts)
+            event.amount = random.choice(demoVars.amounts)
 
         demo_list.append(event)
 

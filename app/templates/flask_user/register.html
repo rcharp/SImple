@@ -23,11 +23,11 @@
     <![endif]-->
 </head>
 <body id="signup-rotate">
-	<div class="container">
+	<div class="container" style="position:relative; height:100%">
 		<div class="row header">
 			<div class="col-md-12">
-				<h1 class="logo">
-					Sign Up
+				<h1 class="logo" style="font-family:Century Gothic;">
+					<font color="#459ce7">Sign Up</font>
 				</h1>
 			</div>
 		</div>
@@ -53,8 +53,9 @@
 									</div>
 									<div class="col-xs-6 text-right">
 										{% if user_manager.enable_register %}
+										Already registered?
 											<a href="{{ url_for('user.login') }}" tabindex='290'>
-												{%trans%}Already registered? Sign in.{%endtrans%}</a>
+												{%trans%}Sign in.{%endtrans%}</a>
 										{% endif %}
 									</div>
 								</div>

@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <div id="header-div" class="clearfix with-margins" style="font-family:Century Gothic; padding-top:10px">
-        <div class="pull-left"><a href="{{ url_for('home_page') }}"><span class="header-title">SimpleMetrics</span></a></div>
+    <div id="header-div" class="clearfix with-margins" style="font-family:Century Gothic; padding-top:10px;">
+        <div class="pull-left"><a href="{{ url_for('index') }}"><span class="header-title">SimpleMetrics</span></a></div>
         <div class="pull-right">
             {% if current_user.is_authenticated() %}
                 <a href="{{ url_for('user_profile_page') }}">{{ current_user.first_name or

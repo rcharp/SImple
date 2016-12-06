@@ -13,7 +13,7 @@ from flask_cache import Cache
 from flask_user import current_user
 from app.app_and_db import app
 from stripeErrorClass import stripeErrorClass
-import demo_variables
+import demoVars
 
 app.config['CACHE_TYPE'] = 'simple'
 app.cache = Cache(app)
@@ -21,7 +21,7 @@ stripeError = stripeErrorClass()
 
 #event_types = ["charge.failed", "charge.refunded", "charge.succeeded","customer.subscription.created","customer.subscription.deleted", "customer.subscription.updated"]
 
-event_types = demo_variables.types
+event_types = demoVars.types
 
 eventList = []
 eventQueue = Queue.Queue()

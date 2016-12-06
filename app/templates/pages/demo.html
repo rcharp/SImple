@@ -34,7 +34,7 @@
   <!-- please wait -->
     <script type="text/javascript" src="/static/css/pleasewait/please-wait.min.js"></script>
     <script type="text/javascript">
-        var str = "please wait while we load your dashboard...";
+        var str = "Please wait while we load your dashboard...";
         str = str.fontcolor("white");
         str = str.fontsize(5);
         var loading_screen = pleaseWait({
@@ -54,7 +54,7 @@
             <nav class="" role="navigation">
               <div id="header-div" class="clearfix with-margins"
                    style="font-family:Century Gothic;font-size:30px;margin-bottom:9px">
-                <div class="pull-left"><a href="{{ url_for('home_page') }}"><font color="#459ce7">&nbsp;&nbsp;SimpleMetrics</font></a></div>
+                <div class="pull-left"><a href="{{ url_for('index') }}"><font color="#459ce7">&nbsp;&nbsp;SimpleMetrics</font></a></div>
               <ul class="nav navbar-nav navbar-right">
                 <div class="pull-right" style="padding-right:20px;font-size:14px">
                   {% if current_user.is_authenticated() %}
@@ -104,7 +104,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <ul class="list-unstyled msg_list">
+                  <ul class="list-unstyled msg_list" style="overflow:auto">
                     {% if events|length > 0 %}
                     {% for event in events %}
                     <li>

@@ -5647,12 +5647,7 @@ html.bg {
 
 #portfolio {
   background: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(25%, rgba(255, 255, 255, 0)));
-  background-image: -webkit-linear-gradient(top, white 0, rgba(255, 255, 255, 0) 25%);
-  background-image: -moz-linear-gradient(top, white 0, rgba(255, 255, 255, 0) 25%);
-  background-image: -o-linear-gradient(top, white 0, rgba(255, 255, 255, 0) 25%);
-  background-image: -ms-linear-gradient(top, white 0, rgba(255, 255, 255, 0) 25%);
-  background-image: linear-gradient(top, white 0, rgba(255, 255, 255, 0) 25%); }
+  }
   #portfolio #showcase {
     margin-top: 40px;
     margin-bottom: -30px;
