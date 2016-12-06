@@ -497,10 +497,7 @@ def dashboard():
 @app.route('/contactus', methods=['GET', 'POST'])
 def contactus():
     if request.method == 'POST':
-        if current_user.is_authenticated():
-            email = current_user.email
-        else:
-            email = ""
+        email = request.form.get('email')
 
         message = request.form.get('message')
         contact_us_email(email, message)

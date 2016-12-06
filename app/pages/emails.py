@@ -44,10 +44,19 @@ def contact_us_email(email, message):
     mail.init_app(app)
     msg = Message("Support request from " + email,
                   recipients=["support@getsimplemetrics.com"],
-                  sender="rickycharpentier@gmail.com")
+                  sender="support@getsimplemetrics.com")
     msg.body = email + " sent you a message:\n\n" + message
 
+    response = Message("Your email to SimpleMetrics has been received.",
+                       recipients=[email],
+                       sender="donotreply@getsimplemetrics.com")
+
+    response.body = "\n\nThanks for emailing us! Your message has been sent and we'll reply shortly. Please don't " \
+                    "respond to this email, as it's coming from an autoresponder and we won't get any replies to " \
+                    "this address.\n\nThe email address you provided is " + email + "."
+
     mail.send(msg)
+    mail.send(response)
 
 def send_cancel_email(email):
     app = Flask(__name__)
