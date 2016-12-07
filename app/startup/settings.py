@@ -18,10 +18,10 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Flask-Mail settings
-MAIL_USERNAME = 'support@getsimplemetrics.com' #os.environ.get('MAIL_USERNAME')
-MAIL_PASSWORD = 'hyrule724'#os.environ.get('MAIL_PASSWORD')
-MAIL_DEFAULT_SENDER = 'support@getsimplemetrics.com'#os.environ.get('MAIL_USERNAME')
-MAIL_SERVER = 'box573.bluehost.com'#'mail.getsimplemetrics.com'
+MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+MAIL_DEFAULT_SENDER = os.environ.get('MAIL_USERNAME')
+MAIL_SERVER = os.environ.get('MAIL_SERVER')
 MAIL_PORT = 465#587
 MAIL_USE_SSL = 1  # Use '1' for True and '0' for False
 MAIL_USE_TLS = 0  # Use '1' for True and '0' for False

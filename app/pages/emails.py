@@ -9,7 +9,8 @@ def send_welcome_email(email, plan):
     mail = Mail()
     mail.init_app(app)
     msg = Message("You've successfully signed up for SimpleMetrics!",
-                  sender="support@getsimplemetrics.com",
+                  #sender="support@getsimplemetrics.com",
+                  sender="getsimplemetrics@gmail.com",
                   recipients=[email])
     if (plan == 'Hobby'):
         amount = 39
@@ -26,7 +27,8 @@ def send_plan_change_email(email, plan):
     mail = Mail()
     mail.init_app(app)
     msg = Message("Your plan with SimpleMetrics has been changed.",
-                  sender="support@getsimplemetrics.com",
+                  #sender="support@getsimplemetrics.com",
+                  sender="simplemetrics@gmail.com",
                   recipients=[email])
     if (plan == 'Hobby'):
         amount = 39
@@ -43,8 +45,10 @@ def contact_us_email(email, message):
     mail = Mail()
     mail.init_app(app)
     msg = Message("Support request from " + email,
-                  recipients=["support@getsimplemetrics.com"],
-                  sender="support@getsimplemetrics.com")
+                  #recipients=["support@getsimplemetrics.com"],
+                  recipients=["getsimplemetrics@gmail.com"],
+                  #sender="support@getsimplemetrics.com")
+                  sender="getsimplemetrics@gmail.com")
     msg.body = email + " sent you a message:\n\n" + message
 
     response = Message("Your email to SimpleMetrics has been received.",
@@ -63,7 +67,8 @@ def send_cancel_email(email):
     mail = Mail()
     mail.init_app(app)
     msg = Message("Goodbye from SimpleMetrics",
-                  sender="support@getsimplemetrics.com",
+                  #sender="support@getsimplemetrics.com",
+                  sender="getsimplemetrics@gmail.com",
                   recipients=[email])
 
     msg.html = render_template('pages/cancel_email.html')
