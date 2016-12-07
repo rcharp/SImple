@@ -15,18 +15,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
                                                     
 # SQLAlchemy settings
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-
-# Cache settings
-
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Flask-Mail settings
 MAIL_USERNAME = 'support@getsimplemetrics.com' #os.environ.get('MAIL_USERNAME')
-MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-MAIL_DEFAULT_SENDER = 'support@getsimplemetrics.com' #os.environ.get('MAIL_USERNAME')
-MAIL_SERVER = 'mail.getsimplemetrics.com'
-MAIL_PORT = 587
-MAIL_USE_SSL = 0  # Use '1' for True and '0' for False
-MAIL_USE_TLS = 1  # Use '1' for True and '0' for False
+MAIL_PASSWORD = 'hyrule724'#os.environ.get('MAIL_PASSWORD')
+MAIL_DEFAULT_SENDER = 'support@getsimplemetrics.com'#os.environ.get('MAIL_USERNAME')
+MAIL_SERVER = 'box573.bluehost.com'#'mail.getsimplemetrics.com'
+MAIL_PORT = 465#587
+MAIL_USE_SSL = 1  # Use '1' for True and '0' for False
+MAIL_USE_TLS = 0  # Use '1' for True and '0' for False
 
 ADMINS = []
 admin1 = os.getenv('ADMIN1', '"Admin One" <admin1@gmail.com>')

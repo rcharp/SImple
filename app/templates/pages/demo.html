@@ -67,7 +67,7 @@
 
             <div class="with-margins" style="font-family:Century Gothic;color:#459ce7;margin-bottom:15px;font-size:14px">
               &nbsp;
-            {% if current_user.is_authenticated() %}
+            {% if current_user.is_authenticated %}
             <a href="{{ url_for('index') }}" style="color:#459ce7">Home</a> &nbsp; | &nbsp;
             <a href="{{ url_for('plans') }}" style="color:#459ce7">Plans</a> &nbsp; | &nbsp;
             <a href="{{ url_for('index') }}" style="color:#459ce7">Dashboard</a> &nbsp; | &nbsp;

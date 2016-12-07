@@ -254,7 +254,7 @@ def login():
     reg_next = request.args.get('reg_next', _endpoint_url(user_manager.after_register_endpoint))
 
     # Immediately redirect already logged in users
-    if current_user.is_authenticated() and user_manager.auto_login_at_login:
+    if current_user.is_authenticated and user_manager.auto_login_at_login:
         return redirect(next)
 
     # Initialize form

@@ -8,7 +8,6 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-#from flask.ext.cache import Cache
 
 # This is the WSGI compliant web application object
 app = Flask(__name__)
@@ -16,4 +15,4 @@ app = Flask(__name__)
 # This is the SQLAlchemy ORM object
 db = SQLAlchemy(app)
 
-#app.config['CACHE_TYPE'] = 'simple'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

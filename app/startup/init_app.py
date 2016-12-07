@@ -18,6 +18,7 @@ def init_app(app, db, extra_config_settings={}):
     if app.testing:
         app.config['WTF_CSRF_ENABLED'] = False              # Disable CSRF checks while testing
 
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     # Setup Flask-Mail
     mail = Mail(app)
 

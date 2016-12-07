@@ -31,19 +31,15 @@ import decimal
 stripeErrors = stripeErrorClass()
 
 ### stripe ####################################
-# app.config.from_pyfile('keys.cfg')
 stripe_keys = {
     'secret_key': os.environ.get('STRIPE_SECRET_KEY')
-    #'secret_key': app.config['SECRET_KEY']
 }
 
 
 ## home pages and redirects ##################
 @app.route('/', methods=['GET'])
-##@login_required
 def home():
-    #session.clear()
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         # check to see if items are in session, this helps us to not make multiple API calls
         if 'api_key' in session:
             stripe.api_key = session['api_key']
@@ -133,7 +129,7 @@ def home():
 ##@login_required
 def index():
     #session.clear()
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         # check to see if items are in session, this helps us to not make multiple API calls
         if 'api_key' in session:
             stripe.api_key = session['api_key']
@@ -263,7 +259,7 @@ def welcome():
 ##pricing and signup ##########################
 @app.route('/getstarted', methods=['GET', 'POST'])
 def getstarted():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         u = current_user.user_auth
         if u.credentials == 1:
             key = decode(u.api_key)
@@ -308,7 +304,7 @@ def getstarted():
 
 @app.route('/pricing')
 def pricing():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return render_template('pages/plans.html')
     else:
         return render_template('pages/pricing.html')
@@ -327,7 +323,7 @@ def charge():
     # Set the api key to Simple Metrics to create the customer and charge their card
     stripe.api_key = stripe_keys['secret_key']
 
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         if current_user.user_auth.paying == 0:
             plan = request.form.get('plan')
             email = current_user.email
@@ -397,7 +393,7 @@ def delete():
 @app.route('/delete_account', methods=['GET', 'POST'])
 def delete_account():
     if request.method == 'GET':
-        if current_user.is_authenticated():
+        if current_user.is_authenticated:
 
             # Delete stripe subscription
             customer = stripe.Customer.retrieve(decode(current_user.user_auth.customer))
@@ -457,7 +453,7 @@ def demo():
 @app.route('/dashboard', methods=['GET'])
 def dashboard():
     """
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         if current_user.user_auth.paying == 1:
             if current_user.user_auth.credentials == 0:
                 flash(_('Please enter API credentials to view your dashboard.'), 'error')
@@ -512,7 +508,7 @@ def contactus():
 # The home page is the same as /
 @app.route('/home_page')
 def home_page():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return redirect(url_for('index'))
     else:
         return redirect('pages/welcome.html')
