@@ -30,9 +30,9 @@ def password_validator(form, field):
         if ch.isdigit(): digits+=1
 
     # Password must have one lowercase letter, one uppercase letter and one digit
-    is_valid = password_length>=6 and lowers and uppers and digits
+    is_valid = password_length>=6 and lowers and digits
     if not is_valid:
-        raise ValidationError(_('Password must have at least 6 characters with one lowercase letter, one uppercase letter and one number'))
+        raise ValidationError(_('Password must have at least 6 characters with one at least lowercase letter and one number'))
 
 def username_validator(form, field):
     """ Username must cont at least 3 alphanumeric characters long"""
